@@ -26,7 +26,7 @@ export default function ImpressumPage() {
           <p>
             <strong>{SITE.legalName}</strong>
             <br />
-            [Inhaber:in / Geschäftsführung – bitte ergänzen]
+            Ümit Ipekten
             <br />
             {ADDRESS.street}
             <br />
@@ -48,12 +48,12 @@ export default function ImpressumPage() {
           <p>
             Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
             <br />
-            [USt-IdNr. – bitte ergänzen]
+            71450/60211
           </p>
 
           <h2>Verantwortlich für den Inhalt</h2>
           <p>
-            [Name – bitte ergänzen], {ADDRESS.street}, {ADDRESS.postalCode} {ADDRESS.city}
+            Ümit Ipekten, {ADDRESS.street}, {ADDRESS.postalCode} {ADDRESS.city}
           </p>
 
           <h2>Streitschlichtung</h2>
