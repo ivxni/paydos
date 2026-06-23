@@ -28,7 +28,7 @@ function Footer({ onNavigate }) {
         </div>
       </div>
       <div style={{ maxWidth: 1320, margin: '0 auto', padding: '20px 40px 40px', borderTop: '1px solid var(--border-hairline)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-        <span style={{ fontSize: 12, color: 'var(--text-faint)' }}>© 2026 Paydos Lounge</span>
+        <span style={{ fontSize: 12, color: 'var(--text-faint)' }}>© 2026 Paydos Lounge — made by WebLabs</span>
         <span style={{ fontSize: 12, color: 'var(--text-faint)' }}>Impressum · Datenschutz</span>
       </div>
     </footer>
