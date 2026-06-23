@@ -25,16 +25,30 @@
 
 .bgImg {
   object-fit: cover;
-  object-position: center;
+  // bias slightly down so the painting + glowing tables stay in frame
+  object-position: 50% 55%;
 }
 
 .scrim {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(110% 80% at 82% 18%, rgba(139, 83, 217, 0.16) 0%, rgba(6, 6, 8, 0) 50%),
-    linear-gradient(180deg, rgba(6, 6, 8, 0.35) 0%, rgba(6, 6, 8, 0.12) 35%, rgba(6, 6, 8, 0.9) 100%),
-    linear-gradient(90deg, rgba(6, 6, 8, 0.92) 0%, rgba(6, 6, 8, 0.55) 42%, rgba(6, 6, 8, 0.08) 100%);
+    // dark behind the text (left) → clear over the photo (right)
+    linear-gradient(
+      90deg,
+      rgba(6, 6, 8, 0.95) 0%,
+      rgba(6, 6, 8, 0.8) 28%,
+      rgba(6, 6, 8, 0.3) 52%,
+      rgba(6, 6, 8, 0) 78%
+    ),
+    // subtle top + bottom darkening for nav / eyebrow / meta legibility
+    linear-gradient(
+      180deg,
+      rgba(6, 6, 8, 0.45) 0%,
+      rgba(6, 6, 8, 0) 28%,
+      rgba(6, 6, 8, 0) 60%,
+      rgba(6, 6, 8, 0.8) 100%
+    );
 }
 
 // Slow-drifting purple smoke glow — adds depth + atmosphere.
@@ -48,8 +62,8 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(139, 83, 217, 0.22) 0%,
-    rgba(110, 59, 184, 0.12) 38%,
+    rgba(139, 83, 217, 0.08) 0%,
+    rgba(110, 59, 184, 0.04) 38%,
     rgba(6, 6, 8, 0) 68%
   );
   filter: blur(20px);

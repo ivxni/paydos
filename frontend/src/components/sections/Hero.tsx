@@ -15,8 +15,8 @@ const TICKER = [
 
 const META = [
   { k: "Standort", v: `${ADDRESS.street}, ${ADDRESS.city}` },
-  { k: "Geöffnet", v: "Di – Sa · ab 18 Uhr" },
-  { k: "Spezialität", v: "Okey · Shisha · Bar" },
+  { k: "Geöffnet", v: "Di – So · abends" },
+  { k: "Drinnen & Draußen", v: "Lounge & Terrasse" },
 ];
 
 export function Hero() {
@@ -24,7 +24,7 @@ export function Hero() {
     <section className={styles.hero}>
       <div className={styles.bg}>
         <Image
-          src="/images/lounge-purple.webp"
+          src="/images/hero-lounge.webp"
           alt="Loungebereich der Paydos Lounge in warmem Licht"
           fill
           priority
@@ -45,16 +45,16 @@ export function Hero() {
           <div className={styles.topline}>
             <p className={styles.eyebrow}>
               <span className={styles.eyebrowMark} aria-hidden />
-              Shisha · Okey · Bar — {ADDRESS.city}
+              Shishabar — {ADDRESS.city}
             </p>
             <OpenStatusPill />
           </div>
 
           <div className={styles.body}>
             <h1 className={styles.title}>
-              Wo der Abend
+              Where time
               <br />
-              <em>ausatmet.</em>
+              <em>takes a break.</em>
             </h1>
 
             <p className={styles.lead}>
@@ -68,7 +68,7 @@ export function Hero() {
                 Tisch reservieren
               </Button>
               <Button href="/karte" variant="glass" size="lg">
-                Zur Karte
+                Zur Menükarte
               </Button>
             </div>
           </div>

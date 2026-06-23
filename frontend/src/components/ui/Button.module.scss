@@ -46,7 +46,7 @@
 }
 .lg {
   height: var(--control-lg);
-  padding-inline: var(--space-8);
+  padding-inline: 28px;
   font-size: var(--fs-body);
 }
 .full {
@@ -61,11 +61,18 @@
   color: var(--ink-900);
   font-weight: var(--w-semibold);
   border-color: transparent;
-  box-shadow: var(--inset-silver);
+  // Soft bevel, no halo at rest.
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.32);
 
   &:hover:not(:disabled) {
     transform: translateY(-1px);
-    box-shadow: var(--inset-silver), var(--glow-silver);
+    // Gentle silver sheen on hover — much subtler than --glow-silver.
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.32),
+      0 0 12px rgba(214, 218, 224, 0.1);
   }
 }
 

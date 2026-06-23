@@ -31,7 +31,7 @@ const mono = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} · Shisha & Okey Lounge in ${ADDRESS.city}`,
+    default: `Paydos · Shisha & Okey Lounge in ${ADDRESS.city}`,
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     locale: SITE.locale,
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} · Shisha & Okey Lounge in ${ADDRESS.city}`,
+    title: `Paydos · Shisha & Okey Lounge in ${ADDRESS.city}`,
     description: SITE.description,
     images: [
       {

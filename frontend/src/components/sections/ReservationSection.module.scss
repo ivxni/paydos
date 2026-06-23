@@ -102,3 +102,36 @@
     top: calc(var(--nav-height) + var(--space-6));
   }
 }
+
+// ---- Contact card (shown while online booking is disabled) ----
+.contactCard {
+  @include glass-card(var(--glass-fill-strong));
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+
+  @include up($bp-sm) {
+    padding: var(--space-8);
+  }
+}
+
+.contactLabel {
+  @include eyebrow;
+  color: var(--silver-400);
+}
+
+.contactText {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.contactActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}

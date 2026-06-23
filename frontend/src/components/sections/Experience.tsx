@@ -7,7 +7,7 @@ const PILLARS = [
   {
     no: "01",
     label: "Shisha",
-    title: "Handgepackt, hochwertiger Tabak.",
+    title: "Jeder Kopf von Hand gepackt.",
     text: "Über 40 Sorten – modern komponiert oder klassisch. Wir packen jeden Kopf frisch und mit Tabak, der seinen Preis wert ist. Langsam, rund, kein Kratzen.",
     img: "/images/drinks-daylight.webp",
     alt: "Frisch gepackte Shisha auf der Terrasse",

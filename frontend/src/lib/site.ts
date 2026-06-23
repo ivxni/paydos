@@ -20,7 +20,7 @@ export const SITE = {
   shortName: "Paydos",
   tagline: "Shisha & Okey Lounge",
   description:
-    "Paydos – Shisha & Okey Lounge in Marbach am Neckar. Handgemachte Shishas, eine kuratierte Bar und lange Abende am Okey-Tisch. Reserviere deinen Tisch in Sekunden.",
+    "Shisha & Okey Lounge in Marbach am Neckar – handgepackter Tabak, italienischer Kaffee, hausgemachte Mocktails und eine Terrasse. Reservier deinen Tisch in unter einer Minute.",
   // Read at runtime where possible; NEXT_PUBLIC_ vars are inlined for the client.
   url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
   locale: "de_DE",

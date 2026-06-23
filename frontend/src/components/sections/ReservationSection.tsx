@@ -1,4 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
 import { ReservationWidget } from "@/components/reservation/ReservationWidget";
 import { ADDRESS, CONTACT } from "@/lib/site";
 import styles from "./ReservationSection.module.scss";
@@ -8,6 +12,10 @@ type Props = {
   headingLevel?: "h1" | "h2";
   tone?: "page" | "sunken";
 };
+
+// Online-Buchung vorerst deaktiviert. Das Widget + der /api/reservation-Flow
+// bleiben erhalten — zum Wiederaktivieren einfach auf `true` setzen.
+const RESERVATION_ENABLED = false;
 
 const INFO: [string, string][] = [
   ["Öffnungszeiten", "Di–Do ab 18 · Fr & Sa ab 15 Uhr"],
@@ -29,8 +37,9 @@ export function ReservationSection({ headingLevel = "h2", tone = "page" }: Props
             Sichere dir <em>deinen Abend.</em>
           </Heading>
           <p className={styles.lead}>
-            Wähl Datum, Uhrzeit und Personen, gib deinen Namen ein – fertig. Kein Konto,
-            kein Formular-Marathon. Wir bestätigen deinen Tisch direkt.
+            {RESERVATION_ENABLED
+              ? "Wähl Datum, Uhrzeit und Personen, gib deinen Namen ein – fertig. Kein Konto, kein Formular-Marathon. Wir bestätigen deinen Tisch direkt."
+              : "Schreib uns einfach auf Instagram oder ruf kurz an – wir halten dir gern einen Tisch frei."}
           </p>
 
           <dl className={styles.info}>
@@ -44,7 +53,38 @@ export function ReservationSection({ headingLevel = "h2", tone = "page" }: Props
         </div>
 
         <div className={styles.form}>
-          <ReservationWidget />
+          {RESERVATION_ENABLED ? (
+            <ReservationWidget />
+          ) : (
+            <div className={styles.contactCard}>
+              <p className={styles.contactLabel}>Tisch anfragen</p>
+              <p className={styles.contactText}>
+                Reservierungen nehmen wir aktuell direkt entgegen – ruf uns an oder
+                schreib uns eine Nachricht auf Instagram. Wir melden uns schnell zurück.
+              </p>
+              <div className={styles.contactActions}>
+                <Button
+                  href={`tel:${CONTACT.phoneHref}`}
+                  variant="primary"
+                  size="lg"
+                  iconLeft={faPhone}
+                  fullWidth
+                >
+                  {CONTACT.phoneDisplay}
+                </Button>
+                <Button
+                  href={CONTACT.instagramUrl}
+                  external
+                  variant="glass"
+                  size="lg"
+                  iconLeft={faInstagram}
+                  fullWidth
+                >
+                  @{CONTACT.instagram}
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </Section>
