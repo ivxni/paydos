@@ -89,7 +89,7 @@ export function Footer() {
 
         <div className={styles.bar}>
           <p>
-            © {year} {SITE.legalName}
+            © {year} {SITE.legalName} — made by WebLabs
           </p>
           <nav className={styles.legal} aria-label="Rechtliches">
             <Link href="/impressum" className={styles.link}>
