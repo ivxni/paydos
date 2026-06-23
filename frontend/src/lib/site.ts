@@ -32,7 +32,7 @@ export const CONTACT = {
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "491729910160",
   phoneDisplay: "0172 9910160",
   phoneHref: "+491729910160",
-  email: "hallo@paydoslounge.de",
+  email: "contact@paydoslounge.de",
   instagram: "paydoslounge",
   instagramUrl: "https://www.instagram.com/paydoslounge",
 } as const;

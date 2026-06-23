@@ -13,7 +13,7 @@ function Footer({ onNavigate }) {
         <div style={{ display: 'flex', gap: 64, flexWrap: 'wrap' }}>
           {[
             ['Besuch', [['Karte', 'menu'], ['Okey & Events', 'experience'], ['Reservieren', 'reserve']]],
-            ['Kontakt', [['+49 221 4242 600', null], ['hallo@paydos.lounge', null], ['Instagram', null]]],
+            ['Kontakt', [['+49 221 4242 600', null], ['contact@paydos.lounge', null], ['Instagram', null]]],
           ].map(([title, items]) => (
             <div key={title}>
               <div style={{ fontFamily: 'var(--font-sans)', fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: 16 }}>{title}</div>

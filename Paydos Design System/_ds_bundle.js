@@ -564,7 +564,7 @@ function Footer({
       gap: 64,
       flexWrap: 'wrap'
     }
-  }, [['Besuch', [['Karte', 'menu'], ['Okey & Events', 'experience'], ['Reservieren', 'reserve']]], ['Kontakt', [['+49 221 4242 600', null], ['hallo@paydos.lounge', null], ['Instagram', null]]]].map(([title, items]) => /*#__PURE__*/React.createElement("div", {
+  }, [['Besuch', [['Karte', 'menu'], ['Okey & Events', 'experience'], ['Reservieren', 'reserve']]], ['Kontakt', [['+49 221 4242 600', null], ['contact@paydos.lounge', null], ['Instagram', null]]]].map(([title, items]) => /*#__PURE__*/React.createElement("div", {
     key: title
   }, /*#__PURE__*/React.createElement("div", {
     style: {
