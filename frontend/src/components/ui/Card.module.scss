@@ -1,0 +1,38 @@
+.card {
+  position: relative;
+  // Frosted glass — translucent fill + backdrop blur + hairline + sheen.
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow), var(--glass-highlight);
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+}
+
+.p-none {
+  padding: 0;
+}
+.p-sm {
+  padding: var(--space-4);
+}
+.p-md {
+  padding: var(--space-6);
+}
+.p-lg {
+  padding: var(--space-8);
+}
+
+.interactive:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-silver);
+  box-shadow: var(--shadow-lg);
+}
+
+.glow {
+  border-color: var(--border-silver);
+  box-shadow: var(--shadow-md);
+}

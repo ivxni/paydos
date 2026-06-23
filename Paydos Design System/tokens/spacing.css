@@ -1,0 +1,48 @@
+/* ============================================================
+   PAYDOS · SPACING, RADII & LAYOUT TOKENS
+   4px base grid. Radii stay restrained — premium, not bubbly:
+   small chips/buttons are nearly square; cards are softly
+   rounded; full pills are reserved for tags and toggles.
+   ============================================================ */
+:root {
+  /* ---- Space scale (4px base) ---- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---- Radii ---- */
+  --radius-xs:   3px;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
+  --radius-pill: 999px;
+
+  /* ---- Container widths ---- */
+  --container-sm:  640px;
+  --container-md:  920px;
+  --container-lg:  1180px;
+  --container-xl:  1320px;
+  --gutter:        24px;
+
+  /* ---- Control heights ---- */
+  --control-sm: 34px;
+  --control-md: 42px;
+  --control-lg: 52px;
+
+  /* ---- Border widths ---- */
+  --bw-hair: 1px;
+  --bw-mid:  1.5px;
+}

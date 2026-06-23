@@ -1,0 +1,108 @@
+@use "mixins" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--w-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    background var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out);
+
+  &:active {
+    transform: translateY(0);
+  }
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+.icon {
+  font-size: 0.85em;
+}
+
+// ---- sizes ----
+.sm {
+  height: var(--control-sm);
+  padding-inline: var(--space-4);
+  font-size: var(--fs-sm);
+}
+.md {
+  height: var(--control-md);
+  padding-inline: var(--space-5);
+  font-size: var(--fs-body);
+}
+.lg {
+  height: var(--control-lg);
+  padding-inline: var(--space-8);
+  font-size: var(--fs-body);
+}
+.full {
+  width: 100%;
+}
+
+// ---- variants ----
+// Brushed chrome-silver — the design-system primary action.
+.primary,
+.silver {
+  background: var(--gradient-silver-soft);
+  color: var(--ink-900);
+  font-weight: var(--w-semibold);
+  border-color: transparent;
+  box-shadow: var(--inset-silver);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: var(--inset-silver), var(--glow-silver);
+  }
+}
+
+// Frosted-glass secondary action.
+.glass {
+  background: var(--glass-fill-light);
+  color: var(--text-primary);
+  border-color: var(--glass-border-lit);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  box-shadow: var(--glass-highlight);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-silver);
+  }
+}
+
+.outline {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    border-color: var(--silver-300);
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-secondary);
+
+  &:hover:not(:disabled) {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

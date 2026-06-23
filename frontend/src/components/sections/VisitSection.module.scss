@@ -1,0 +1,111 @@
+@use "mixins" as *;
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: center;
+
+  @include up($bp-lg) {
+    grid-template-columns: 1fr 0.85fr;
+    gap: var(--space-16);
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  @include eyebrow;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--silver-400);
+  margin-bottom: var(--space-5);
+}
+
+.tick {
+  width: 30px;
+  height: 1px;
+  background: var(--silver-600);
+}
+
+.title {
+  @include display;
+  font-size: clamp(2.4rem, 5vw, var(--fs-display-lg));
+  font-weight: var(--w-semibold);
+  margin: 0;
+
+  em {
+    font-style: italic;
+    @include silver-text;
+  }
+}
+
+.lead {
+  margin: var(--space-5) 0 0;
+  max-width: 42ch;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+}
+
+.pill {
+  margin-top: var(--space-6);
+  align-self: flex-start;
+}
+
+.meta {
+  margin: var(--space-8) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 420px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.metaLabel {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.metaValue {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-primary);
+  text-align: right;
+
+  a:hover {
+    color: var(--silver-200);
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.mapCol {
+  position: relative;
+}
+
+.map {
+  box-shadow: var(--shadow-lg);
+}

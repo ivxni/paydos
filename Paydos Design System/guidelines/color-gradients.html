@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x200" name="Brand gradients" subtitle="Chrome silver shine & purple smoke" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px; background: var(--ink-900); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grad { height: 116px; border-radius: var(--radius-lg); border: 1px solid var(--border-soft); position: relative; overflow: hidden; }
+  .meta { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-top: 8px; }
+  .name { font-family: var(--font-sans); font-size: 11px; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--text-secondary); position: absolute; left: 12px; bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <div class="grad" style="background:var(--gradient-silver)"><span class="name" style="color:#1a1a1f">gradient-silver</span></div>
+      <div class="meta">176° chrome · #FDFDFE → #898E97 → #6A6E76</div>
+    </div>
+    <div>
+      <div class="grad" style="background:var(--gradient-purple);box-shadow:var(--glow-purple)"><span class="name">gradient-purple</span></div>
+      <div class="meta">135° smoke · #C9A7F0 → #8B53D9 → #5A2E9E</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+@use "mixins" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  @include glass-card(var(--glass-fill-strong));
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+
+  @include up($bp-sm) {
+    padding: var(--space-8);
+  }
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+
+  @include up($bp-sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.groupLabel {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--w-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ---- day picker (rolling week) ---- */
+.days {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
+
+  @include up($bp-sm) {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--space-3) var(--space-1);
+  border-radius: var(--radius-md);
+  background: var(--surface-inset);
+  border: 1px solid var(--border-soft);
+  color: var(--text-secondary);
+  transition:
+    color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    background var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+
+  &:hover:not(:disabled) {
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+  }
+}
+
+.dayWeekday {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--w-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.dayNum {
+  font-family: var(--font-mono, var(--font-sans));
+  font-size: var(--fs-h3);
+  font-weight: var(--w-semibold);
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.dayMonth {
+  font-size: 10px;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dayActive {
+  background: var(--gradient-silver-soft);
+  border-color: transparent;
+  box-shadow: var(--inset-silver), var(--glow-silver);
+
+  .dayWeekday,
+  .dayNum,
+  .dayMonth {
+    color: var(--ink-900);
+  }
+
+  &:hover {
+    color: var(--ink-900);
+  }
+}
+
+.dayClosed {
+  opacity: 0.4;
+  cursor: not-allowed;
+
+  .dayNum {
+    color: var(--text-muted);
+  }
+}
+
+.hint {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.error {
+  font-size: var(--fs-xs);
+  color: var(--danger);
+}
+
+.note {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.formError {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--danger);
+
+  a {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+/* ---- success ---- */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+  padding-block: var(--space-6);
+}
+
+.tiles {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-md);
+  font-weight: var(--w-semibold);
+  letter-spacing: var(--ls-display);
+  margin: 0;
+  @include silver-text;
+}
+
+.successText {
+  max-width: 40ch;
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+
+  strong {
+    color: var(--text-primary);
+    font-weight: var(--w-medium);
+  }
+}

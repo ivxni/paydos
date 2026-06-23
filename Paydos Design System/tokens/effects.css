@@ -1,0 +1,50 @@
+/* ============================================================
+   PAYDOS · EFFECTS — shadows, glows, blur, motion
+   On black, elevation is built from a lighter surface + a
+   hairline border + a soft ambient shadow. Purple glow is the
+   signature highlight; silver sheen marks premium surfaces.
+   ============================================================ */
+:root {
+  /* ---- Ambient shadows (depth on dark) ---- */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.40);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.45);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.50);
+  --shadow-lg: 0 18px 48px rgba(0,0,0,0.58);
+  --shadow-xl: 0 30px 80px rgba(0,0,0,0.65);
+
+  /* ---- Glows (signature) ---- */
+  --glow-purple:      0 0 28px rgba(139,83,217,0.40);
+  --glow-purple-soft: 0 0 18px rgba(139,83,217,0.22);
+  --glow-purple-ring: 0 0 0 1px rgba(139,83,217,0.55), 0 0 24px rgba(139,83,217,0.35);
+  --glow-silver:      0 0 22px rgba(214,218,224,0.20);
+
+  /* ---- Inner sheen — top highlight on raised silver/dark surfaces ---- */
+  --inset-top: inset 0 1px 0 rgba(255,255,255,0.06);
+  --inset-silver: inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.4);
+
+  /* ---- Frosted glass (the core surface language) ----
+     Translucent dark fill + backdrop blur + a hairline border and a
+     top inner highlight. This is how Paydos surfaces are built. */
+  --blur-sm: 10px; /* @kind other */
+  --blur-md: 20px; /* @kind other */
+  --blur-lg: 32px; /* @kind other */
+  --glass-fill:        rgba(22,22,26,0.50); /* @kind color */
+  --glass-fill-strong: rgba(26,26,31,0.68); /* @kind color */
+  --glass-fill-light:  rgba(255,255,255,0.05); /* @kind color */
+  --glass-border:      rgba(255,255,255,0.10); /* @kind color */
+  --glass-border-lit:  rgba(255,255,255,0.16); /* @kind color */
+  --glass-highlight: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 1px rgba(255,255,255,0.02); /* @kind other */
+  --glass-shadow: 0 16px 48px rgba(0,0,0,0.55); /* @kind other */
+
+  /* ---- Texture: faint film grain overlay (optional) ---- */
+  --grain-opacity: 0.04; /* @kind other */
+
+  /* ---- Motion ---- */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1); /* @kind other */
+  --dur-fast:   140ms; /* @kind other */
+  --dur-base:   220ms; /* @kind other */
+  --dur-slow:   360ms; /* @kind other */
+  --dur-slower: 600ms; /* @kind other */
+}

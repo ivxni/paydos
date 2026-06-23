@@ -1,0 +1,25 @@
+<!-- @dsCard group="Type" viewport="700x300" name="Type scale" subtitle="Display → body, one ramp" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px 28px; background: var(--ink-900); }
+  .r { display: flex; align-items: baseline; gap: 16px; padding: 5px 0; border-bottom: 1px solid var(--border-hairline); }
+  .r:last-child { border-bottom: 0; }
+  .t { color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tok { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
+  .serif { font-family: var(--font-display); font-weight: 600; }
+  .sans { font-family: var(--font-sans); }
+</style>
+</head>
+<body>
+  <div class="r"><span class="t serif" style="font-size:54px;line-height:1">Paydos</span><span class="tok">display-lg · 54</span></div>
+  <div class="r"><span class="t serif" style="font-size:40px;line-height:1">Reserve a table</span><span class="tok">display-md · 40</span></div>
+  <div class="r"><span class="t sans" style="font-size:27px;font-weight:600">Section heading</span><span class="tok">h2 · 27</span></div>
+  <div class="r"><span class="t sans" style="font-size:18px;font-weight:500">Subheading</span><span class="tok">h4 · 18</span></div>
+  <div class="r"><span class="t sans" style="font-size:15px;color:var(--text-secondary)">Body copy for the lounge</span><span class="tok">body · 15</span></div>
+  <div class="r"><span class="t sans" style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted)">Label</span><span class="tok">xs · 12</span></div>
+</body>
+</html>

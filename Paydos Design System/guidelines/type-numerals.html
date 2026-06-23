@@ -1,0 +1,30 @@
+<!-- @dsCard group="Type" viewport="700x170" name="Numerals & mono" subtitle="Okey tiles, prices, timers — Space Grotesk" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px 28px; background: var(--ink-900); font-family: var(--font-sans); display: flex; align-items: center; gap: 26px; }
+  .tiles { display: flex; gap: 10px; }
+  .tile { width: 52px; height: 70px; border-radius: var(--radius-sm); background: linear-gradient(180deg,#F6F8FA,#D2D6DC); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; font-size: 26px; color: var(--ink-900); box-shadow: var(--shadow-sm), var(--inset-silver); position: relative; }
+  .tile.p { color: var(--purple-600); box-shadow: var(--shadow-sm), var(--glow-purple-soft); }
+  .tile::after { content:""; position:absolute; bottom:8px; left:50%; transform:translateX(-50%); width:7px; height:7px; border-radius:50%; border:1.5px solid rgba(0,0,0,.25); }
+  .prices { font-family: var(--font-mono); }
+  .prices .p { font-size: 30px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em; }
+  .prices .s { font-size: 12px; color: var(--text-muted); }
+  .meta { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="tiles">
+    <div class="tile">01</div>
+    <div class="tile p">60</div>
+  </div>
+  <div class="prices">
+    <div class="p">€14,50</div>
+    <div class="s">Doppelapfel · Premium Bowl</div>
+    <div class="meta">Space Grotesk · tabular numerals</div>
+  </div>
+</body>
+</html>

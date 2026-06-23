@@ -1,0 +1,72 @@
+@use "mixins" as *;
+
+.header {
+  position: relative;
+  overflow: hidden;
+  padding-block: calc(var(--nav-height) + var(--space-16)) var(--space-16);
+  background: var(--gradient-page);
+
+  @include up($bp-md) {
+    padding-block: calc(var(--nav-height) + var(--space-20)) var(--space-20);
+  }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImg {
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 6, 8, 0.7) 0%, rgba(6, 6, 8, 0.55) 40%, rgba(6, 6, 8, 0.95) 100%),
+    linear-gradient(90deg, rgba(6, 6, 8, 0.8) 0%, rgba(6, 6, 8, 0.25) 75%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 52ch;
+}
+
+.eyebrow {
+  @include eyebrow;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--silver-400);
+  margin-bottom: var(--space-5);
+}
+
+.tick {
+  width: 32px;
+  height: 1px;
+  background: var(--silver-600);
+}
+
+.title {
+  @include display;
+  font-size: clamp(2.6rem, 7vw, var(--fs-display-xl));
+  font-weight: var(--w-semibold);
+  line-height: 1;
+  margin: 0;
+
+  em {
+    font-style: italic;
+    @include silver-text;
+  }
+}
+
+.intro {
+  margin: var(--space-6) 0 0;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+}

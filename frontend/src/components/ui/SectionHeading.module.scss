@@ -1,0 +1,52 @@
+@use "mixins" as *;
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 60ch;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.eyebrow {
+  @include eyebrow;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--silver-400);
+}
+
+.tick {
+  width: 30px;
+  height: 1px;
+  background: var(--silver-600);
+}
+
+.center .tick {
+  display: none;
+}
+
+.title {
+  @include display;
+  font-size: clamp(2rem, 5vw, var(--fs-display-md));
+  font-weight: var(--w-semibold);
+  margin: 0;
+  color: var(--text-primary);
+
+  em {
+    font-style: italic;
+    @include silver-text;
+  }
+}
+
+.intro {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}

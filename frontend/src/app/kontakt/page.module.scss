@@ -1,0 +1,86 @@
+@use "mixins" as *;
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  align-items: start;
+
+  @include up($bp-lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+  }
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+
+  @include up($bp-lg) {
+    order: -1;
+  }
+}
+
+.details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.row {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-soft);
+  color: var(--silver-300);
+  font-size: var(--fs-h4);
+}
+
+.rowLabel {
+  display: block;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.rowValue {
+  font-size: var(--fs-body-lg);
+  color: var(--text-primary);
+
+  &:hover {
+    color: var(--text-primary);
+  }
+}
+
+.hoursBlock {
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border-hairline);
+  max-width: 420px;
+}
+
+.hoursTitle {
+  @include eyebrow;
+  color: var(--silver-400);
+  margin: 0 0 var(--space-5);
+}
+
+.mapTitle {
+  margin-bottom: var(--space-8);
+}

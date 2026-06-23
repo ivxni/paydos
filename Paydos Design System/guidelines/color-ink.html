@@ -1,0 +1,26 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Ink — backgrounds & surfaces" subtitle="Near-black, cool-neutral surface ramp" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px; background: var(--ink-950); }
+  .row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .sw { border-radius: var(--radius-md); border: 1px solid var(--border-hairline); height: 84px; display: flex; align-items: flex-end; padding: 8px; }
+  .lab { font-family: var(--font-sans); font-size: 10.5px; color: var(--text-secondary); letter-spacing: var(--ls-wide); }
+  .hex { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-top: 3px; }
+  figcaption { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw" style="background:var(--ink-950)"><div><div class="lab">ink-950</div><div class="hex">#060608</div></div></div>
+    <div class="sw" style="background:var(--ink-900)"><div><div class="lab">ink-900</div><div class="hex">#0A0A0C</div></div></div>
+    <div class="sw" style="background:var(--ink-800)"><div><div class="lab">ink-800</div><div class="hex">#131316</div></div></div>
+    <div class="sw" style="background:var(--ink-750)"><div><div class="lab">ink-750</div><div class="hex">#18181C</div></div></div>
+    <div class="sw" style="background:var(--ink-700)"><div><div class="lab">ink-700</div><div class="hex">#1E1E23</div></div></div>
+    <div class="sw" style="background:var(--ink-600)"><div><div class="lab">ink-600</div><div class="hex">#2F2F36</div></div></div>
+  </div>
+</body>
+</html>

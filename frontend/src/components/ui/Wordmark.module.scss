@@ -1,0 +1,57 @@
+.mark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1;
+  user-select: none;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: var(--w-semibold);
+  letter-spacing: 0.14em;
+  padding-left: 0.14em; // balance the trailing tracking
+  background: var(--gradient-silver);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.tag {
+  font-family: var(--font-sans);
+  font-weight: var(--w-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.42em;
+  padding-left: 0.42em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+// ---- sizes ----
+.sm {
+  .name {
+    font-size: 25px;
+  }
+  .tag {
+    font-size: 8px;
+  }
+}
+
+.md {
+  .name {
+    font-size: 30px;
+  }
+  .tag {
+    font-size: 8.5px;
+  }
+}
+
+.lg {
+  .name {
+    font-size: 40px;
+  }
+  .tag {
+    font-size: 10px;
+  }
+}

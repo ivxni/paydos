@@ -1,0 +1,97 @@
+// ============================================================
+//  PAYDOS · SCSS mixins & helpers
+//  CSS custom-property tokens live in globals.scss (:root).
+//  These are authoring helpers (breakpoints, glass, silver text).
+// ============================================================
+
+// ---- Breakpoints (mobile-first) ----
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+@mixin up($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin down($size) {
+  @media (max-width: ($size - 0.02px)) {
+    @content;
+  }
+}
+
+// ---- The signature chrome-silver clipped text ----
+@mixin silver-text {
+  background: var(--gradient-silver);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+// ---- Frosted glass — the core Paydos surface language ----
+// NOTE: keep the backdrop-filter value a SINGLE blur() function. Compound
+// values like `blur() saturate()` get silently dropped by the build's CSS
+// minifier (Lightning CSS), which disables the glass blur entirely.
+@mixin glass($fill: var(--glass-fill), $blur: var(--blur-md)) {
+  background: $fill;
+  -webkit-backdrop-filter: blur($blur);
+  backdrop-filter: blur($blur);
+  border: 1px solid var(--glass-border);
+}
+
+// Full glass card: fill + blur + hairline + highlight + ambient shadow.
+@mixin glass-card($fill: var(--glass-fill)) {
+  @include glass($fill);
+  box-shadow: var(--glass-shadow), var(--glass-highlight);
+}
+
+// ---- Eyebrow / over-line label ----
+@mixin eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--w-medium);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+// ---- Display heading base ----
+@mixin display {
+  font-family: var(--font-display);
+  font-weight: var(--w-semibold);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+}
+
+// ---- Focus ring (purple bloom) ----
+@mixin focus-ring {
+  outline: none;
+  border-color: var(--border-accent);
+  box-shadow: var(--glow-purple-soft);
+}
+
+// ---- Faint film-grain overlay (drop inside a positioned dark block) ----
+@mixin grain($opacity: var(--grain-opacity)) {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: $opacity;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+// ---- Bottom protection gradient for text over imagery ----
+@mixin photo-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 6, 8, 0) 0%,
+    rgba(6, 6, 8, 0.15) 45%,
+    rgba(6, 6, 8, 0.82) 100%
+  );
+}

@@ -1,0 +1,355 @@
+// ============================================================
+//  PAYDOS · global stylesheet
+//  Ports the design-system tokens (colors / type / spacing /
+//  effects) to CSS custom properties, then a small base reset
+//  and a few brand helper classes + layout primitives.
+//  Font families (--font-display/sans/mono) are provided by
+//  next/font in layout.tsx.
+// ============================================================
+
+:root {
+  // ---- Ink: near-black backgrounds & surfaces ----
+  --ink-950: #060608;
+  --ink-900: #0a0a0c;
+  --ink-850: #0e0e11;
+  --ink-800: #131316;
+  --ink-750: #18181c;
+  --ink-700: #1e1e23;
+  --ink-650: #26262c;
+  --ink-600: #2f2f36;
+  --ink-500: #3c3c44;
+
+  // ---- Silver: metallic neutral scale ----
+  --silver-50: #f6f8fa;
+  --silver-100: #e8ebef;
+  --silver-200: #d2d6dc;
+  --silver-300: #b7bcc4;
+  --silver-400: #969ba4;
+  --silver-500: #767b85;
+  --silver-600: #585c65;
+  --silver-700: #3f424a;
+
+  // ---- Purple: the smoke accent ----
+  --purple-100: #eadbfb;
+  --purple-200: #d3b6f4;
+  --purple-300: #bb93ec;
+  --purple-400: #a172e2;
+  --purple-500: #8b53d9;
+  --purple-600: #6e3bb8;
+  --purple-700: #512a8c;
+  --purple-800: #361c5e;
+
+  // ---- Text ----
+  --text-primary: #eceef1;
+  --text-secondary: #a9aeb6;
+  --text-muted: #71757e;
+  --text-faint: #4c4f57;
+  --text-on-accent: #ffffff;
+
+  // ---- Brand gradients ----
+  --gradient-silver: linear-gradient(
+    176deg,
+    #fdfdfe 0%,
+    #c9cdd3 20%,
+    #898e97 46%,
+    #ebedf0 58%,
+    #a6aab2 78%,
+    #6a6e76 100%
+  );
+  --gradient-silver-soft: linear-gradient(160deg, #e8ebef 0%, #a9aeb6 55%, #6e727a 100%);
+  --gradient-purple: linear-gradient(135deg, #c9a7f0 0%, #8b53d9 52%, #5a2e9e 100%);
+  --gradient-purple-smoke: linear-gradient(
+    180deg,
+    rgba(161, 114, 226, 0) 0%,
+    rgba(139, 83, 217, 0.55) 60%,
+    rgba(90, 46, 158, 0.9) 100%
+  );
+  --gradient-page: radial-gradient(
+      120% 90% at 50% -10%,
+      rgba(139, 83, 217, 0.1) 0%,
+      rgba(10, 10, 12, 0) 55%
+    ),
+    var(--ink-900);
+
+  // ---- Semantic surfaces ----
+  --surface-page: var(--ink-900);
+  --surface-sunken: var(--ink-950);
+  --surface-card: var(--ink-800);
+  --surface-raised: var(--ink-750);
+  --surface-overlay: var(--ink-700);
+  --surface-inset: var(--ink-850);
+
+  // ---- Borders (hairlines over dark) ----
+  --border-hairline: rgba(255, 255, 255, 0.07);
+  --border-soft: rgba(255, 255, 255, 0.11);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-silver: rgba(183, 188, 196, 0.3);
+  --border-accent: rgba(139, 83, 217, 0.55);
+
+  // ---- Accent aliases ----
+  --accent: var(--purple-500);
+  --accent-hover: var(--purple-400);
+  --accent-press: var(--purple-600);
+  --accent-soft: rgba(139, 83, 217, 0.14);
+  --accent-line: rgba(139, 83, 217, 0.38);
+
+  // ---- Status ----
+  --success: #5fb58a;
+  --warning: #d8b45a;
+  --danger: #d96a6a;
+  --info: var(--purple-400);
+
+  // ---- Type scale ----
+  --fs-display-2xl: 96px;
+  --fs-display-xl: 72px;
+  --fs-display-lg: 54px;
+  --fs-display-md: 40px;
+  --fs-h1: 34px;
+  --fs-h2: 27px;
+  --fs-h3: 21px;
+  --fs-h4: 18px;
+  --fs-body-lg: 17px;
+  --fs-body: 15px;
+  --fs-sm: 13.5px;
+  --fs-xs: 12px;
+  --fs-eyebrow: 11.5px;
+
+  // ---- Weights ----
+  --w-light: 300;
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+
+  // ---- Line heights ----
+  --lh-tight: 1.04;
+  --lh-display: 1.12;
+  --lh-snug: 1.32;
+  --lh-body: 1.6;
+  --lh-relaxed: 1.75;
+
+  // ---- Letter spacing ----
+  --ls-display: -0.02em;
+  --ls-tight: -0.01em;
+  --ls-normal: 0;
+  --ls-wide: 0.04em;
+  --ls-eyebrow: 0.32em;
+  --ls-label: 0.16em;
+
+  // ---- Space scale (4px base) ----
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  // ---- Radii ----
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-pill: 999px;
+
+  // ---- Container widths ----
+  --container-sm: 640px;
+  --container-md: 920px;
+  --container-lg: 1180px;
+  --container-xl: 1320px;
+  --gutter: 24px;
+
+  // ---- Control heights ----
+  --control-sm: 34px;
+  --control-md: 42px;
+  --control-lg: 52px;
+
+  // ---- Border widths ----
+  --bw-hair: 1px;
+  --bw-mid: 1.5px;
+
+  // ---- Shadows ----
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.58);
+  --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.65);
+
+  // ---- Glows (signature, sparingly used) ----
+  --glow-purple: 0 0 28px rgba(139, 83, 217, 0.4);
+  --glow-purple-soft: 0 0 18px rgba(139, 83, 217, 0.22);
+  --glow-purple-ring: 0 0 0 1px rgba(139, 83, 217, 0.55), 0 0 24px rgba(139, 83, 217, 0.35);
+  --glow-silver: 0 0 22px rgba(214, 218, 224, 0.2);
+
+  // ---- Inner sheen ----
+  --inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --inset-silver: inset 0 1px 0 rgba(255, 255, 255, 0.14), inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+
+  // ---- Frosted glass (core surface language) ----
+  --blur-sm: 10px;
+  --blur-md: 20px;
+  --blur-lg: 32px;
+  --glass-fill: rgba(22, 22, 26, 0.5);
+  --glass-fill-strong: rgba(26, 26, 31, 0.68);
+  --glass-fill-light: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-lit: rgba(255, 255, 255, 0.16);
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  --glass-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+  --grain-opacity: 0.04;
+
+  // ---- Motion ----
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 360ms;
+  --dur-slower: 600ms;
+
+  // ---- Layout ----
+  --nav-height: 76px;
+
+  // Flat platinum fallback for small headings/labels where a gradient
+  // would be overkill. Big display headings use the silver gradient.
+  --heading: var(--silver-100);
+}
+
+// ============================================================
+//  Base reset
+// ============================================================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--nav-height) + 16px);
+}
+
+body {
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--w-regular);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100dvh;
+  // NOTE: must be `clip`, not `hidden`. `overflow: hidden` turns <body>
+  // into a scroll container / backdrop-root, which silently disables
+  // backdrop-filter on the fixed header (the frosted glass blur). `clip`
+  // prevents horizontal overflow without breaking the effect.
+  overflow-x: clip;
+}
+
+::selection {
+  background: rgba(139, 83, 217, 0.32);
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--purple-400);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ============================================================
+//  Helper / utility classes
+// ============================================================
+// The signature chrome-silver clipped text — the "expensive move".
+.silver-text {
+  background: var(--gradient-silver);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--w-medium);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.rule {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-soft) 20%,
+    var(--border-soft) 80%,
+    transparent
+  );
+}
+
+// Skip link for keyboard users
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  padding: 10px 18px;
+  background: var(--ink-800);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+
+  &:focus {
+    left: 16px;
+    top: 16px;
+  }
+}

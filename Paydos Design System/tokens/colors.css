@@ -1,0 +1,92 @@
+/* ============================================================
+   PAYDOS · COLOR TOKENS
+   Black & silver lounge palette with a purple-smoke accent.
+   Backgrounds are near-black and cool-neutral; text is soft
+   white; the brand "shine" is a chrome silver gradient, with
+   purple reserved for glow, highlights and key moments.
+   ============================================================ */
+:root {
+  /* ---- Ink: near-black backgrounds & surfaces ---- */
+  --ink-950: #060608;
+  --ink-900: #0A0A0C;
+  --ink-850: #0E0E11;
+  --ink-800: #131316;
+  --ink-750: #18181C;
+  --ink-700: #1E1E23;
+  --ink-650: #26262C;
+  --ink-600: #2F2F36;
+  --ink-500: #3C3C44;
+
+  /* ---- Silver: metallic neutral scale ---- */
+  --silver-50:  #F6F8FA;
+  --silver-100: #E8EBEF;
+  --silver-200: #D2D6DC;
+  --silver-300: #B7BCC4;   /* primary silver */
+  --silver-400: #969BA4;
+  --silver-500: #767B85;
+  --silver-600: #585C65;
+  --silver-700: #3F424A;
+
+  /* ---- Purple: the smoke accent ---- */
+  --purple-100: #EADBFB;
+  --purple-200: #D3B6F4;
+  --purple-300: #BB93EC;
+  --purple-400: #A172E2;
+  --purple-500: #8B53D9;   /* primary accent */
+  --purple-600: #6E3BB8;
+  --purple-700: #512A8C;
+  --purple-800: #361C5E;
+
+  /* ---- Text ---- */
+  --text-primary:   #ECEEF1;
+  --text-secondary: #A9AEB6;
+  --text-muted:     #71757E;
+  --text-faint:     #4C4F57;
+  --text-on-accent: #FFFFFF;
+
+  /* ---- Brand gradients ---- */
+  /* Chrome silver — the wordmark shine. Use as background-clip:text
+     on display headings, or as a hairline/border fill. */
+  --gradient-silver: linear-gradient(
+      176deg,
+      #FDFDFE 0%,
+      #C9CDD3 20%,
+      #898E97 46%,
+      #EBEDF0 58%,
+      #A6AAB2 78%,
+      #6A6E76 100%); /* @kind color */
+  --gradient-silver-soft: linear-gradient(160deg, #E8EBEF 0%, #A9AEB6 55%, #6E727A 100%); /* @kind color */
+  /* Purple smoke — glows, key CTAs, accents */
+  --gradient-purple: linear-gradient(135deg, #C9A7F0 0%, #8B53D9 52%, #5A2E9E 100%); /* @kind color */
+  --gradient-purple-smoke: linear-gradient(180deg, rgba(161,114,226,0.0) 0%, rgba(139,83,217,0.55) 60%, rgba(90,46,158,0.9) 100%); /* @kind color */
+  /* Page wash — subtle radial lift behind hero content */
+  --gradient-page: radial-gradient(120% 90% at 50% -10%, rgba(139,83,217,0.10) 0%, rgba(10,10,12,0) 55%), var(--ink-900); /* @kind color */
+
+  /* ---- Semantic surfaces ---- */
+  --surface-page:    var(--ink-900);
+  --surface-sunken:  var(--ink-950);
+  --surface-card:    var(--ink-800);
+  --surface-raised:  var(--ink-750);
+  --surface-overlay: var(--ink-700);
+  --surface-inset:   var(--ink-850);
+
+  /* ---- Borders (hairlines over dark) ---- */
+  --border-hairline: rgba(255,255,255,0.07);
+  --border-soft:     rgba(255,255,255,0.11);
+  --border-strong:   rgba(255,255,255,0.18);
+  --border-silver:   rgba(183,188,196,0.30);
+  --border-accent:   rgba(139,83,217,0.55);
+
+  /* ---- Accent aliases ---- */
+  --accent:        var(--purple-500);
+  --accent-hover:  var(--purple-400);
+  --accent-press:  var(--purple-600);
+  --accent-soft:   rgba(139,83,217,0.14);
+  --accent-line:   rgba(139,83,217,0.38);
+
+  /* ---- Status ---- */
+  --success: #5FB58A;
+  --warning: #D8B45A;
+  --danger:  #D96A6A;
+  --info:    var(--purple-400);
+}

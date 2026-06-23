@@ -1,0 +1,58 @@
+/* ============================================================
+   PAYDOS · TYPOGRAPHY TOKENS
+   Display: Cormorant Garamond — high-contrast editorial serif,
+   used large with the silver gradient for an "expensive menu"
+   feel. UI / body: Jost — geometric sans that echoes the
+   wide, even-stroke wordmark. Eyebrows / labels: Jost in
+   upper-case with wide tracking (cf. "SHISHA & OKEY LOUNGE").
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans:    'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'Space Grotesk', ui-monospace, 'SF Mono', monospace;
+
+  /* ---- Weights ---- */
+  --w-light:    300; /* @kind font */
+  --w-regular:  400; /* @kind font */
+  --w-medium:   500; /* @kind font */
+  --w-semibold: 600; /* @kind font */
+  --w-bold:     700; /* @kind font */
+
+  /* ---- Type scale (px) ---- */
+  --fs-display-2xl: 96px;   /* hero numerals / single words */
+  --fs-display-xl:  72px;
+  --fs-display-lg:  54px;
+  --fs-display-md:  40px;
+  --fs-h1: 34px;
+  --fs-h2: 27px;
+  --fs-h3: 21px;
+  --fs-h4: 18px;
+  --fs-body-lg: 17px;
+  --fs-body:    15px;
+  --fs-sm:      13.5px;
+  --fs-xs:      12px;
+  --fs-eyebrow: 11.5px;
+
+  /* ---- Line heights ---- */
+  --lh-tight:   1.04; /* @kind font */
+  --lh-display: 1.12; /* @kind font */
+  --lh-snug:    1.32; /* @kind font */
+  --lh-body:    1.6; /* @kind font */
+  --lh-relaxed: 1.75; /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-display: -0.02em; /* @kind font */
+  --ls-tight:   -0.01em; /* @kind font */
+  --ls-normal:  0; /* @kind font */
+  --ls-wide:    0.04em; /* @kind font */
+  --ls-eyebrow: 0.32em; /* @kind font */
+  --ls-label:   0.16em; /* @kind font */
+
+  /* ---- Semantic roles ---- */
+  --text-display-font: var(--font-display);
+  --text-heading-font: var(--font-sans);
+  --text-body-font:    var(--font-sans);
+}

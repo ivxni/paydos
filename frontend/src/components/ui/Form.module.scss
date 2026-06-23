@@ -1,0 +1,107 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--w-medium);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.control {
+  width: 100%;
+  height: var(--control-md);
+  padding: 0 var(--space-4);
+  background: var(--surface-inset);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  outline: none;
+  transition:
+    border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+
+  &::placeholder {
+    color: var(--text-faint);
+  }
+
+  // Chrome / silver focus outline (no purple).
+  &:focus {
+    border-color: var(--silver-300);
+    box-shadow:
+      0 0 0 1px var(--silver-400),
+      0 0 0 4px rgba(183, 188, 196, 0.16);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+// tint the native date/time picker icon for dark UI
+.control[type="date"],
+.control[type="time"] {
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(0.7);
+    cursor: pointer;
+  }
+}
+
+.textarea {
+  height: auto;
+  min-height: 120px;
+  padding: var(--space-3) var(--space-4);
+  line-height: var(--lh-body);
+  resize: vertical;
+}
+
+.selectWrap {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: var(--space-4);
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid var(--text-muted);
+    border-bottom: 1.5px solid var(--text-muted);
+    transform: translateY(-65%) rotate(45deg);
+    pointer-events: none;
+  }
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: var(--space-10);
+  cursor: pointer;
+}
+
+.invalid {
+  border-color: var(--danger);
+
+  &:focus {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 3px rgba(217, 106, 106, 0.18);
+  }
+}
+
+.hint {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.error {
+  font-size: var(--fs-xs);
+  color: var(--danger);
+}

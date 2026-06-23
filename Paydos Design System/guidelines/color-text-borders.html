@@ -1,0 +1,30 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Text & borders" subtitle="Soft-white text ramp and hairline borders on dark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body { margin: 0; padding: 22px; background: var(--ink-900); display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+  .stack > div { font-family: var(--font-sans); font-size: 16px; margin-bottom: 9px; }
+  .tag { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); margin-left: 8px; }
+  .borders { display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+  .b { height: 1px; }
+  .bl { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div style="color:var(--text-primary)">Primary text<span class="tag">#ECEEF1</span></div>
+    <div style="color:var(--text-secondary)">Secondary text<span class="tag">#A9AEB6</span></div>
+    <div style="color:var(--text-muted)">Muted text<span class="tag">#71757E</span></div>
+    <div style="color:var(--text-faint)">Faint text<span class="tag">#4C4F57</span></div>
+  </div>
+  <div class="borders">
+    <div><div class="bl">border-hairline</div><div class="b" style="background:var(--border-hairline)"></div></div>
+    <div><div class="bl">border-soft</div><div class="b" style="background:var(--border-soft)"></div></div>
+    <div><div class="bl">border-silver</div><div class="b" style="background:var(--border-silver)"></div></div>
+    <div><div class="bl">border-accent</div><div class="b" style="background:var(--border-accent)"></div></div>
+  </div>
+</body>
+</html>
