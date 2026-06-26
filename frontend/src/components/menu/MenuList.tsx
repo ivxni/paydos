@@ -14,6 +14,19 @@ export function MenuList() {
           {cat.groups.map((group) => (
             <div key={group.title} className={styles.group}>
               <h3 className={styles.groupTitle}>{group.title}</h3>
+              {group.extras && group.extras.length > 0 && (
+                <div className={styles.extras}>
+                  <span className={styles.extrasLabel}>Extras</span>
+                  <ul className={styles.extrasList}>
+                    {group.extras.map((ex) => (
+                      <li key={ex.name} className={styles.extra}>
+                        {ex.name}
+                        <span className={styles.extraPrice}>{ex.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <ul className={styles.items}>
                 {group.items.map((item) => (
                   <li key={item.name} className={styles.item}>

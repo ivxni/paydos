@@ -9,9 +9,16 @@ export type MenuItem = {
   desc?: string;
 };
 
+export type MenuExtra = {
+  name: string;
+  price: string;
+};
+
 export type MenuGroup = {
   title: string;
   items: MenuItem[];
+  /** optional add-ons that apply to every item in the group */
+  extras?: MenuExtra[];
 };
 
 export type MenuCategory = {
@@ -66,6 +73,11 @@ export const MENU: MenuCategory[] = [
           { name: "040 Hamburg", price: "16,00 €", desc: "Minze, Menthol" },
           { name: "Pistachio Cream", price: "16,00 €", desc: "Pistazie, Vanille" },
           { name: "Green Mind Fresh", price: "16,00 €", desc: "Minze, Limette" },
+        ],
+        extras: [
+          { name: "Ice Bazooka", price: "+3 €" },
+          { name: "Phunnel", price: "+2 €" },
+          { name: "Milch", price: "+2 €" },
         ],
       },
       {
