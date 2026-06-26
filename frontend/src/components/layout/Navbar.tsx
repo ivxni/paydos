@@ -6,9 +6,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { Button } from "@/components/ui/Button";
 import { Wordmark } from "@/components/ui/Wordmark";
-import { NAV_LINKS } from "@/lib/site";
+import { CONTACT, NAV_LINKS } from "@/lib/site";
 import styles from "./Navbar.module.scss";
 
 /** Floating frosted-pill header with a portal-rendered mobile drawer. */
@@ -63,6 +64,15 @@ export function Navbar() {
           </nav>
 
           <div className={styles.actions}>
+            <a
+              href={CONTACT.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.iconLink}
+              aria-label="Paydos auf Instagram"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
             <Button href="/reservierung" variant="primary" size="sm" className={styles.cta}>
               Tisch reservieren
             </Button>
