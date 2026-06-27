@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faPhone, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "@/components/ui/Container";
 import { Wordmark } from "@/components/ui/Wordmark";
 import { ADDRESS, CONTACT, NAV_LINKS, SITE } from "@/lib/site";
@@ -80,6 +80,17 @@ export function Footer() {
                   className={styles.link}
                 >
                   @{CONTACT.instagram}
+                </a>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faStar} className={styles.cIcon} />
+                <a
+                  href={CONTACT.googleReviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  Auf Google bewerten
                 </a>
               </li>
             </ul>

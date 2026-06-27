@@ -35,6 +35,7 @@ export const CONTACT = {
   email: "contact@paydoslounge.de",
   instagram: "paydoslounge",
   instagramUrl: "https://www.instagram.com/paydoslounge",
+  googleReviewUrl: "https://g.page/r/CUYvX0fAzIGtEBM/review",
 } as const;
 
 export const ADDRESS = {

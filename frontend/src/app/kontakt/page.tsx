@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faLocationDot, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faPhone, faEnvelope, faStar } from "@fortawesome/free-solid-svg-icons";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -97,6 +97,22 @@ export default function KontaktPage() {
                   <span className={styles.rowLabel}>E-Mail</span>
                   <a href={`mailto:${CONTACT.email}`} className={styles.rowValue}>
                     {CONTACT.email}
+                  </a>
+                </span>
+              </li>
+              <li className={styles.row}>
+                <span className={styles.icon}>
+                  <FontAwesomeIcon icon={faStar} />
+                </span>
+                <span>
+                  <span className={styles.rowLabel}>Bewertung</span>
+                  <a
+                    href={CONTACT.googleReviewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.rowValue}
+                  >
+                    Auf Google bewerten
                   </a>
                 </span>
               </li>

@@ -75,7 +75,7 @@ export const MENU: MenuCategory[] = [
           { name: "Green Mind Fresh", price: "16,00 €", desc: "Minze, Limette" },
         ],
         extras: [
-          { name: "Ice Bazooka", price: "+3 €" },
+          { name: "Ice Bazooka", price: "+2 €" },
           { name: "Phunnel", price: "+2 €" },
           { name: "Milch", price: "+2 €" },
         ],
